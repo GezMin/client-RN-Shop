@@ -7,6 +7,7 @@
 	"singleQuote": true,
 	"arrowParens": "avoid",
 	"impotrsOrder": [
+		"<THIRD_PARTY_MODULES>",
 		"^@/components/(.*)$",
 		"^@/hooks/(.*)$",
 		"^@/types/(.*)$",
@@ -18,7 +19,6 @@
 		"^@/navigation/(.*)$",
 		"^@/api/(.*)$",
 		"^@/store/(.*)$",
-		"<THIRD_PARTY_MODULES>",
 		"^../(.*)$",
 		"^./(.*)$"
 	],
