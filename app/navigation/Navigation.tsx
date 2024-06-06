@@ -29,6 +29,8 @@ const Navigation: FC = () => {
 		}
 	}, [])
 
+	useCheckAuth(currentRoute)
+
 	return (
 		<>
 			<NavigationContainer ref={navRef}>

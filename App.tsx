@@ -1,3 +1,4 @@
+import Toast from '@/components/ui/Toast'
 import Navigation from '@/navigation/Navigation'
 import AuthProvider from '@/providers/auth/AuthProvider'
 import { StatusBar, Text } from 'react-native'
@@ -10,8 +11,9 @@ export default function App() {
 				<SafeAreaProvider>
 					<Navigation />
 				</SafeAreaProvider>
-				<StatusBar barStyle='light-content' />
 			</AuthProvider>
+			<StatusBar barStyle='light-content' />
+			<Toast />
 		</>
 	)
 }
