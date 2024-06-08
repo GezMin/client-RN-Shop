@@ -1,4 +1,5 @@
 import AuthFields from './AuthFields'
+import { useAuthMutations } from './useAuthMutations'
 import Loader from '@/components/ui/Loader'
 import Button from '@/components/ui/button/Button'
 import { IAuthFormData } from '@/types/auth.interface'
@@ -13,29 +14,31 @@ const Auth: FC = () => {
 		mode: 'onChange'
 	})
 
+	const { isLoading, registerSync, loginSync } = useAuthMutations(reset)
+
 	const onSubmit: SubmitHandler<IAuthFormData> = data => {
-		console.log(data)
+		if (isReg) registerSync(data)
+		else loginSync(data)
 	}
 
-	const isLoading = false
-
 	return (
-		<View className='mx-2 items-center justify-center h-full'>
+		<View className='items-center justify-center h-full mx-2'>
 			<View className='w-9/12'>
-				<Text className='text-center text-black text-3xl font-medium mb-8'>
-					{isReg ? 'Sing Up' : 'Login'}
+				<Text className='mb-8 text-3xl font-medium text-center text-black'>
+					{isReg ? 'Sign Up' : 'Login'}
 				</Text>
 				{isLoading ? (
 					<Loader />
 				) : (
 					<>
-						<AuthFields control={control} isPassRequired={isReg} />
+						<AuthFields control={control} isPassRequired />
+
 						<Button onPress={handleSubmit(onSubmit)}>
-							<Text>{isReg ? 'Sing Up' : 'Login'}</Text>
+							{isReg ? 'Sign Up' : 'Login'}
 						</Button>
 
 						<Pressable onPress={() => setIsReg(!isReg)}>
-							<Text className='text-black text-center text-base mt-6'>
+							<Text className='mt-6 text-base text-center text-black'>
 								{isReg
 									? 'Already have an account? '
 									: "Don't have an account? "}
