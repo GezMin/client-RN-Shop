@@ -1,5 +1,5 @@
 import PrivateNavigator from './PrivateNavigator'
-import BottomMenu from '@/components/ui/layout/bottom-menu/BottomMenu'
+import BottomMenu from '@/components/layout/bottom-menu/BottomMenu'
 import { useAuth } from '@/hooks/useAuth'
 import { useCheckAuth } from '@/providers/auth/useCheckAuth'
 import {
