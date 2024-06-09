@@ -4,7 +4,7 @@ import { Text, View } from 'react-native'
 const Search: FC = () => {
 	return (
 		<View>
-			<Text>Search</Text>
+			<Text>Search!</Text>
 		</View>
 	)
 }

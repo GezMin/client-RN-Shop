@@ -1,16 +1,11 @@
 import { IRoute } from './navigation.type'
-import Home from '@/components/screens/Home'
-import Auth from '@/components/screens/auth/Auth'
 import Explorer from '@/components/screens/explorer/Explorer'
 import Favorites from '@/components/screens/favorites/Favorites'
+import Home from '@/components/screens/home/Home'
 import Profile from '@/components/screens/profile/Profile'
 import Search from '@/components/screens/search/Search'
 
 export const routes: IRoute[] = [
-	{
-		name: 'Auth',
-		component: Auth
-	},
 	{
 		name: 'Home',
 		component: Home
