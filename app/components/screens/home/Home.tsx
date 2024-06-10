@@ -1,3 +1,4 @@
+import Products from '../product/Product'
 import Header from './Headers'
 import Banner from './banner/Banner'
 import Categories from './categories/Categories'
@@ -10,6 +11,7 @@ const Home: FC = () => {
 			<Header />
 			<Banner />
 			<Categories />
+			<Products />
 		</Layout>
 	)
 }
