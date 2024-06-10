@@ -1,11 +1,16 @@
+import Header from './Headers'
+import Banner from './banner/Banner'
+import Categories from './categories/Categories'
+import Layout from '@/components/layout/Layout'
 import { FC } from 'react'
-import { Text, View } from 'react-native'
 
 const Home: FC = () => {
 	return (
-		<View>
-			<Text>Home!</Text>
-		</View>
+		<Layout>
+			<Header />
+			<Banner />
+			<Categories />
+		</Layout>
 	)
 }
 

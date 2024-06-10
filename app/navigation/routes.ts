@@ -1,4 +1,6 @@
 import { IRoute } from './navigation.type'
+import Cart from '@/components/screens/cart/Cart'
+import Category from '@/components/screens/category/Category'
 import Explorer from '@/components/screens/explorer/Explorer'
 import Favorites from '@/components/screens/favorites/Favorites'
 import Home from '@/components/screens/home/Home'
@@ -25,5 +27,13 @@ export const routes: IRoute[] = [
 	{
 		name: 'Profile',
 		component: Profile
+	},
+	{
+		name: 'Cart',
+		component: Cart
+	},
+	{
+		name: 'Category',
+		component: Category
 	}
 ]
