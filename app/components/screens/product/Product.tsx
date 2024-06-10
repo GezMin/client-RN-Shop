@@ -1,16 +1,27 @@
-import { useProducts } from './useProducts'
+import { useProduct } from './useProduct'
+import Layout from '@/components/layout/Layout'
 import Loader from '@/components/ui/Loader'
-import Catalog from '@/components/ui/catalog/Catalog'
+import { getMediaSource } from '@/utils/getMediaSource'
 import { FC } from 'react'
+import { Image, View } from 'react-native'
 
-const Products: FC = () => {
-	const { isLoading, products } = useProducts()
+const Product: FC = () => {
+	const { isLoading, product } = useProduct()
 
-	return isLoading ? (
-		<Loader />
-	) : (
-		<Catalog title='Products' products={products || []} />
+	if (isLoading) return <Loader />
+	if (!product) return null
+
+	return (
+		<Layout>
+			<View className='items-center justify-center mt-4'>
+				<Image
+					source={getMediaSource(product.image)}
+					width={260}
+					height={260}
+				/>
+			</View>
+		</Layout>
 	)
 }
 
-export default Products
+export default Product
