@@ -1,3 +1,6 @@
+import ProductHeader from './ProductHeader'
+import AddToCartButton from './product-info/AddToCartButton'
+import ProductInfo from './product-info/ProductInfo'
 import { useProduct } from './useProduct'
 import Layout from '@/components/layout/Layout'
 import Loader from '@/components/ui/Loader'
@@ -13,6 +16,7 @@ const Product: FC = () => {
 
 	return (
 		<Layout>
+			<ProductHeader product={product} />
 			<View className='items-center justify-center mt-4'>
 				<Image
 					source={getMediaSource(product.image)}
@@ -20,6 +24,8 @@ const Product: FC = () => {
 					height={260}
 				/>
 			</View>
+			<ProductInfo product={product} />
+			<AddToCartButton product={product} />
 		</Layout>
 	)
 }
