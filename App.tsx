@@ -2,6 +2,7 @@ import Toast from '@/components/ui/Toast'
 import Navigation from '@/navigation/Navigation'
 import AuthProvider from '@/providers/auth/AuthProvider'
 import { persistor, store } from '@/store/store'
+import { StripeProvider } from '@stripe/stripe-react-native'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { StatusBar } from 'expo-status-bar'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
@@ -23,7 +24,13 @@ export default function App() {
 				<PersistGate persistor={persistor} loading={null}>
 					<AuthProvider>
 						<SafeAreaProvider>
-							<Navigation />
+							<StripeProvider
+								publishableKey={
+									process.env.STRIPE_KEY as string
+								}
+							>
+								<Navigation />
+							</StripeProvider>
 						</SafeAreaProvider>
 					</AuthProvider>
 					<StatusBar style='auto' />
